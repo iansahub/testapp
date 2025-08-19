@@ -1,3 +1,4 @@
+import mysql.connector
 async def app(scope, receive, send):
     assert scope['type'] == 'http'
 
