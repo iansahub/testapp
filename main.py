@@ -1,5 +1,4 @@
 #
-#!/usr/bin/python
 import MySQLdb
 
 async def app(scope, receive, send):
