@@ -10,6 +10,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
     uv sync --frozen --no-install-project
 
+
 # Copy the project into the image
 ADD . /app
 
@@ -19,3 +20,5 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 # Run with uvicorn
 CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+FROM dso-quay-registry-quay-quay-enterprise.apps.ocp1.azure.dso.digital.mod.uk/ian_sandever/iansa_test
